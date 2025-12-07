@@ -5,6 +5,8 @@ const {
   getMessages,
 } = require("../controllers/messageController");
 
+router.get("/", authMiddleware, getMessages);
+
 router.post("/", sendMessage);
 router.get("/", getMessages); // admin only in the future
 

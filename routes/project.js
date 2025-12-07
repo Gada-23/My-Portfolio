@@ -7,6 +7,10 @@ const {
   deleteProject,
 } = require("../controllers/projectController");
 
+router.post("/", authMiddleware, createProject);
+router.put("/:id", authMiddleware, updateProject);
+router.delete("/:id", authMiddleware, deleteProject);
+
 router.get("/", getProjects);
 router.post("/", createProject);
 router.put("/:id", updateProject);

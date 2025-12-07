@@ -7,6 +7,10 @@ const {
   deleteSkill,
 } = require("../controllers/skillController");
 
+router.post("/", authMiddleware, createSkill);
+router.put("/:id", authMiddleware, updateSkill);
+router.delete("/:id", authMiddleware, deleteSkill);
+
 router.get("/", getSkills);
 router.post("/", createSkill);
 router.put("/:id", updateSkill);
