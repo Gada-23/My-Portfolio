@@ -17,6 +17,12 @@ app.get("/", (req, res) => {
   res.send("Portfolio Backend is running!");
 });
 
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/about", require("./routes/about"));
+app.use("/api/skill", require("./routes/skill"));
+app.use("/api/project", require("./routes/project"));
+app.use("/api/message", require("./routes/message"));
+
 // Start server
 const PORT = process.env.PORT || 5000;
 
